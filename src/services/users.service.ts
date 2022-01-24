@@ -20,3 +20,7 @@ export const update = async (id: ObjectId, user: any) => {
 export const kill = async (id: ObjectId) => {
   return User.findByIdAndDelete(id)
 }
+
+export const profile = async (id: ObjectId) => {
+  return User.findById(id).populate('tweets').lean()
+}

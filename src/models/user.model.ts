@@ -15,6 +15,12 @@ const schema = new Mongoose.Schema(
       type: String,
       required: true,
     },
+    tweets: [
+      {
+        type: Mongoose.Schema.Types.ObjectId,
+        ref: 'tweet',
+      },
+    ],
   },
   {
     timestamps: true,
