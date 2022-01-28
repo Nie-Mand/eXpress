@@ -13,13 +13,18 @@ export default function main() {
   app.use(parser.json())
   app.use(parser.urlencoded({ extended: true }))
 
-  app.use(routes)
+  app.get('/', (req, res) =>  {
+    res.send("Hello World")
+  })
+  // app.use(routes)
 
-  connect()
-    .then(() => {
-      app.listen(4000, () => {
-        console.log('Server is running on port 4000')
-      })
-    })
-    .catch(console.error)
+  app.listen(4000, () => {
+    console.log('Server is running on port 4000')
+  })
+
+  // connect()
+  //   .then(() => {
+      
+  //   })
+  //   .catch(console.error)
 }
